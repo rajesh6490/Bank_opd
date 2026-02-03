@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Input, notification, Card, Typography, Space } from "antd";
 import { UserOutlined, LockOutlined, LoginOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import axios from "../axios"; // Assuming this is configured to point to your backend
+import axios from "../axios"; 
 import { useAuth } from "../context/AuthContext";
 
 const { Text } = Typography;
@@ -10,8 +10,8 @@ const { Text } = Typography;
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); // Loading state
-  const { login, user } = useAuth(); // Destructure user from context
+  const [loading, setLoading] = useState(false); 
+  const { login, user } = useAuth(); 
   const navigate = useNavigate();
 
   // Redirect to /home if the user is already logged in
