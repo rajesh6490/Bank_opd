@@ -2,10 +2,9 @@ import axios from "axios";
 import { getToken, removeToken } from "./utils/auth";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8080", // Replace with your Spring Boot backend URL
+  baseURL: "http://localhost:8080", 
 });
 
-// Request interceptor to add the token to headers
 instance.interceptors.request.use(
   (config) => {
     const token = getToken();
@@ -18,8 +17,6 @@ instance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
-
-// Response interceptor to handle 401 errors
 instance.interceptors.response.use(
   (response) => {
     return response;
@@ -27,7 +24,7 @@ instance.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 401) {
       removeToken();
-      window.location.href = '/'; // Redirect to login page
+      window.location.href = '/'; 
     }
     return Promise.reject(error);
   }
