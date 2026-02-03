@@ -1,0 +1,68 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.next/
+out/
+build/
+
+# Java / Spring Boot
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.iml
+*.project
+.classpath
+.settings/
+.idea/
+*.swp
+*.bak
+*.tmp
+*.pid
+*.gz
+
+# Maven
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+mvnw
+mvnw.cmd
+
+# Gradle
+.gradle/
+build/
+*.lock
+.gradle/caches/
+.gradle/wrapper/
+gradle-app.setting
+!gradle/wrapper/gradle-wrapper.jar
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.launch
+*.vs/
+*.idea/
+
+# Logs
+logs/
+*.log
+logs/**/*.log
+
+# Others
+*.tmp
+*.bak
+*.swp
+*.lock
+*.gz
+*.log
