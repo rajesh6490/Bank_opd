@@ -27,13 +27,11 @@ import axios from "../axios";
 import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
-  const { user } = useAuth(); // User data from context
+  const { user } = useAuth(); 
   const [showBalance, setShowBalance] = useState(false);
   const [mpin, setMpin] = useState(["", "", "", "", "", ""]);
   const [isMpinModalVisible, setIsMpinModalVisible] = useState(false);
-  const [balance, setBalance] = useState(null); // To store the fetched balance
-
-  // Error handling for user data
+  const [balance, setBalance] = useState(null); 
   if (!user) {
     return (
       <div className="mt-10 text-center">
@@ -50,7 +48,7 @@ const Home = () => {
 
   const handleMpinSubmit = async () => {
     if (mpin.join("") === user.mpin) {
-      // Validate MPIN against stored one in user data
+      
       try {
         const response = await axios.get(`/api/users/balance`);
         setBalance(response.data);
@@ -71,7 +69,7 @@ const Home = () => {
 
   const handleMpinChange = (value, index) => {
     const newMpin = [...mpin];
-    newMpin[index] = value.slice(-1); // Allow only the last digit entered
+    newMpin[index] = value.slice(-1);
     setMpin(newMpin);
 
     if (value && index < mpin.length - 1) {
@@ -80,7 +78,7 @@ const Home = () => {
     }
   };
 
-  // Function to copy the account number to clipboard
+  
   const handleCopyAccountNumber = () => {
     navigator.clipboard.writeText(user.accountNumber);
     message.success("Account number copied to clipboard!");
