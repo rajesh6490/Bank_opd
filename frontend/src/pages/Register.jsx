@@ -12,10 +12,10 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
-  const [formData, setFormData] = useState(null); // To store form data temporarily
-  const [isMpinMatch, setIsMpinMatch] = useState(true); // To track if MPINs match
-  const [loading, setLoading] = useState(false); // Loading state for form submission
-  const [mpinLoading, setMpinLoading] = useState(false); // Loading state for MPIN confirmation
+  const [formData, setFormData] = useState(null);
+  const [isMpinMatch, setIsMpinMatch] = useState(true); 
+  const [loading, setLoading] = useState(false); 
+  const [mpinLoading, setMpinLoading] = useState(false); 
 
   const navigate = useNavigate();
 
